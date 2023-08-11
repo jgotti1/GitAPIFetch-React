@@ -1,5 +1,6 @@
 import "./App.css";
 import FetchResponse from "./FetchResponse";
+import FetchedDIsplay from "./FetchedDIsplay";
 import UserForm from "./UserForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
@@ -11,9 +12,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Git Hub Account Fetch</h1>
+      <h1 className="title">Git Hub Account Search</h1>
       <UserForm userName={userName} setUserName={setUserName} setUserData={setUserData} userData={userData} setGoodFetch={setGoodFetch} />
-      <FetchResponse userName={userName} userData={userData}  goodFetch={goodFetch}/>
+      <FetchResponse userName={userName} userData={userData} goodFetch={goodFetch} />
+      <FetchedDIsplay userData={userData} />
     </div>
   );
 }

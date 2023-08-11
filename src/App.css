@@ -5,7 +5,6 @@
   margin: 20px;
 }
 .formContainer {
-
   background: rgb(237, 237, 237);
   border: 1px solid black;
   border-radius: 10px;
@@ -24,7 +23,12 @@
 }
 
 .selected p {
-  display:  inline;
+  display: inline;
   color: rgb(12, 12, 12);
   font-size: larger;
+}
+
+.avatar {
+  border: 1px solid black;
+  border-radius: 10px;
 }
