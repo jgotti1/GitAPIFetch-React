@@ -8,10 +8,22 @@ function FetchedDIsplay({ userData }) {
       <Card style={{ width: "33rem", border: "2px solid black", marginBottom: "50px" }}>
         <Card.Img variant="top" src={userData.avatar_url} className="avatar" />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text>
+          <Card.Title className="card-title">
+            <h3>
+              GitGub User Name: <p>{userData.login}</p>
+            </h3>
+          </Card.Title>
+          <Card.Text>
+            <p className="card-text">
+              This GitHub user has <strong>{userData.public_repos}</strong> repositories
+              <br />
+              click on the link below to check out their work.
+            </p>
+          </Card.Text>
           <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary">Go to GitHub Account</Button>
+            <Button className="buttons" size="sm" variant="primary">
+              Go to GitHub Account
+            </Button>
           </a>
         </Card.Body>
       </Card>

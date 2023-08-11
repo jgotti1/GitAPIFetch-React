@@ -15,7 +15,7 @@ function App() {
       <h1 className="title">Git Hub Account Search</h1>
       <UserForm userName={userName} setUserName={setUserName} setUserData={setUserData} userData={userData} setGoodFetch={setGoodFetch} />
       <FetchResponse userName={userName} userData={userData} goodFetch={goodFetch} />
-      <FetchedDIsplay userData={userData} />
+      {goodFetch && <FetchedDIsplay userData={userData} />}
     </div>
   );
 }

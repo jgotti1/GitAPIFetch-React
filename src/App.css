@@ -32,3 +32,18 @@
   border: 1px solid black;
   border-radius: 10px;
 }
+
+.card-title{
+line-height: 30px;
+}
+
+.card-title p{
+  display: inline;
+  color: rgb(12, 15, 226);
+  font-size: 28px;
+  font-style: italic;
+}
+.card-text{
+  font-size: 15px;
+  font-style: italic;
+}
