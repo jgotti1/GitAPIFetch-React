@@ -1,7 +1,7 @@
 import "./App.css";
-import FetchResponse from "./FetchResponse";
-import FetchedDIsplay from "./FetchedDIsplay";
-import UserForm from "./UserForm";
+import FetchResponse from "./components/FetchResponse";
+import FetchedDIsplay from "./components/FetchedDIsplay";
+import UserForm from "./components/UserForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 
