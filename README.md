@@ -78,7 +78,7 @@ The block below is machine-readable project info for a portfolio site (invisible
   "category": "web app",
   "tagline": "A React app that looks up any GitHub account and displays their public profile data.",
   "description": "Built as a teaching tool for a coding bootcamp, this app demonstrates core JavaScript fetch/API concepts: making a request, handling loading and error states, and rendering the response. Users search a GitHub username to see their avatar, public repo count, recently updated repositories, and a link to their profile, with live/debounced search, search history, and a light/dark theme toggle.",
-  "liveUrl": null,
+  "liveUrl": "https://githubfetch.margotticode.com",
   "repoUrl": "https://github.com/jgotti1/GitAPIFetch-React",
   "thumbnail": "https://raw.githubusercontent.com/jgotti1/GitAPIFetch-React/main/docs/preview.jpg",
   "tech": ["React", "React Bootstrap", "Bootstrap", "GitHub REST API", "JavaScript Fetch API"],
