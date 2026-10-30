@@ -1,15 +1,92 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --form-bg: rgb(237, 237, 237);
+  --border-color: black;
+  --card-bg: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #181a1b;
+  --text-color: #e8e6e3;
+  --form-bg: #2b2e30;
+  --border-color: #555;
+  --card-bg: #24262a;
+
+  /* Bootstrap reads these variables for body/card colors, so override them too */
+  --bs-body-bg: var(--bg-color);
+  --bs-body-color: var(--text-color);
+  --bs-card-bg: var(--card-bg);
+  --bs-card-color: var(--text-color);
+  --bs-border-color: var(--border-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
 .App {
   text-align: center;
 }
 .title {
   margin: 20px;
 }
+
+.theme-toggle {
+  margin: 15px;
+}
+
 .formContainer {
-  background: rgb(237, 237, 237);
-  border: 1px solid black;
+  background: var(--form-bg);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 25px;
+  padding-bottom: 35px;
   box-shadow: 2px 2px 8px rgb(170, 169, 169);
+}
+
+.historyBlock {
+  margin-bottom: 15px;
+}
+
+.historyBlock .list-group-item:last-child {
+  margin-bottom: 10px;
+}
+
+/* Dark mode: Bootstrap's own .form-control / .list-group-item rules
+   otherwise keep dark text, which is unreadable on the dark panels. */
+[data-theme="dark"] .form-control {
+  background-color: #1f2123;
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #9a9a9a;
+}
+
+[data-theme="dark"] .form-control:focus {
+  background-color: #1f2123;
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .list-group-item {
+  background-color: #1f2123;
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .list-group-item.list-group-item-action:hover,
+[data-theme="dark"] .list-group-item.list-group-item-action:focus {
+  background-color: #35383b;
+  color: var(--text-color);
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
 .buttons {
@@ -26,6 +103,10 @@
   display: inline;
   color: rgb(12, 12, 12);
   font-size: larger;
+}
+
+[data-theme="dark"] .selected p {
+  color: var(--text-color);
 }
 
 .avatar {
