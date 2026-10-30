@@ -5,6 +5,10 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 const REPOS_TO_SHOW = 5;
 
+function formatDate(dateString) {
+  return new Date(dateString).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+}
+
 function FetchedDIsplay({ userData }) {
   const [repos, setRepos] = useState([]);
   const [reposLoading, setReposLoading] = useState(false);
@@ -42,12 +46,32 @@ function FetchedDIsplay({ userData }) {
               GitGub User Name: <p>{userData.login}</p>
             </h3>
           </Card.Title>
-          <Card.Text>
-            <p className="card-text">
-              This GitHub user has <strong>{userData.public_repos}</strong> repositories
-              <br />
-              click on the link below to check out their work.
-            </p>
+          <div className="card-meta">
+            {userData.name && (
+              <p className="card-meta-item">
+                <strong>Full Name:</strong> {userData.name}
+              </p>
+            )}
+            {userData.created_at && (
+              <p className="card-meta-item">
+                <strong>Account Created:</strong> {formatDate(userData.created_at)}
+              </p>
+            )}
+            {!reposLoading && repos.length > 0 && (
+              <p className="card-meta-item">
+                <strong>Last Repo Update:</strong> {formatDate(repos[0].updated_at)}
+              </p>
+            )}
+            {userData.email && (
+              <p className="card-meta-item">
+                <strong>Email:</strong> {userData.email}
+              </p>
+            )}
+          </div>
+          <Card.Text className="card-text">
+            This GitHub user has <strong>{userData.public_repos}</strong> repositories
+            <br />
+            click on the link below to check out their work.
           </Card.Text>
           <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
             <Button className="buttons" size="sm" variant="primary">

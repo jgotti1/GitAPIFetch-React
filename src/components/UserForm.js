@@ -40,6 +40,7 @@ function UserForm({ setUserName, userName, setUserData, setGoodFetch, loading, s
       }
 
       const responseData = await response.json();
+      console.log(responseData);
       setUserData(responseData);
       setGoodFetch(true);
       setHistory(addToHistory(name));

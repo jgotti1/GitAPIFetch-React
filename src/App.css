@@ -89,6 +89,17 @@ body {
   color: var(--text-color);
 }
 
+.card-meta {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-meta-item {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-style: italic;
+}
+
 .buttons {
   box-shadow: 2px 2px 9px rgb(169, 168, 168);
 }
